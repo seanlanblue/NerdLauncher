@@ -37,11 +37,12 @@ public class NerdLauncherFragment extends ListFragment {
         Log.i(TAG, "I've found " + activities.size() + " activities.");
 
         Collections.sort(activities, new Comparator<ResolveInfo>() {
-        `    public int compare(ResolveInfo a, ResolveInfo b) {
+            public int compare(ResolveInfo a, ResolveInfo b) {
                 PackageManager pm = getActivity().getPackageManager();
                 return String.CASE_INSENSITIVE_ORDER.compare(a.loadLabel(pm).toString(), b.loadLabel(pm).toString());
             }
         });
+        //change
 
         ArrayAdapter<ResolveInfo> adapter = new ArrayAdapter<ResolveInfo>(
                 getActivity(), android.R.layout.simple_expandable_list_item_1, activities) {
